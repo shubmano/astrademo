@@ -1,15 +1,26 @@
-import { Settings, Share2, Flame, Users, TrendingUp, Calendar } from "lucide-react";
+import { useState } from "react";
+import { Share2, Flame, TrendingUp, Calendar } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SettingsDialog } from "@/components/account/SettingsDialog";
+import { EditProfileDialog } from "@/components/account/EditProfileDialog";
 
 const Account = () => {
+  const [userName, setUserName] = useState("John Doe");
+  const [userHandle, setUserHandle] = useState("@johndoe");
+
   const userStats = {
     followers: 234,
     following: 189,
     workouts: 67,
     streak: 12,
+  };
+
+  const handleProfileUpdate = (name: string, handle: string) => {
+    setUserName(name);
+    setUserHandle(handle);
   };
 
   const progressData = [
@@ -27,9 +38,7 @@ const Account = () => {
         <div className="sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border shadow-soft">
           <div className="p-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold">Profile</h1>
-            <Button variant="ghost" size="icon">
-              <Settings className="w-5 h-5" />
-            </Button>
+            <SettingsDialog />
           </div>
         </div>
 
@@ -42,12 +51,14 @@ const Account = () => {
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <div className="flex-1">
-                <h2 className="text-xl font-bold mb-1">John Doe</h2>
-                <p className="text-muted-foreground mb-3">@johndoe</p>
+                <h2 className="text-xl font-bold mb-1">{userName}</h2>
+                <p className="text-muted-foreground mb-3">{userHandle}</p>
                 <div className="flex items-center gap-2">
-                  <Button size="sm" className="gradient-primary">
-                    Edit Profile
-                  </Button>
+                  <EditProfileDialog
+                    currentName={userName}
+                    currentHandle={userHandle}
+                    onSave={handleProfileUpdate}
+                  />
                   <Button size="sm" variant="outline">
                     <Share2 className="w-4 h-4 mr-2" />
                     Share

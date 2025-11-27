@@ -56,6 +56,25 @@ const Logbook = () => {
             </TabsList>
 
             <TabsContent value="history" className="space-y-4">
+              {/* Weekly Summary Card - Moved to top */}
+              <Card className="p-6 gradient-primary shadow-medium">
+                <h3 className="font-bold text-white mb-4">This Week</h3>
+                <div className="grid grid-cols-3 gap-4 text-white">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">5</div>
+                    <div className="text-xs opacity-90">Workouts</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">4h 30m</div>
+                    <div className="text-xs opacity-90">Total Time</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">27</div>
+                    <div className="text-xs opacity-90">Exercises</div>
+                  </div>
+                </div>
+              </Card>
+
               {workoutHistory.map((day, dayIndex) => (
                 <div key={dayIndex} className="space-y-2">
                   <h3 className="font-semibold text-sm text-muted-foreground px-1">
@@ -84,25 +103,6 @@ const Logbook = () => {
                   ))}
                 </div>
               ))}
-
-              {/* Weekly Summary Card */}
-              <Card className="p-6 gradient-primary shadow-medium mt-6">
-                <h3 className="font-bold text-white mb-4">This Week</h3>
-                <div className="grid grid-cols-3 gap-4 text-white">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold">5</div>
-                    <div className="text-xs opacity-90">Workouts</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold">4h 30m</div>
-                    <div className="text-xs opacity-90">Total Time</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold">27</div>
-                    <div className="text-xs opacity-90">Exercises</div>
-                  </div>
-                </div>
-              </Card>
             </TabsContent>
 
             <TabsContent value="saved" className="space-y-3">
