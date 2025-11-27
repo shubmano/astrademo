@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
+# Astra - Social Fitness App
 
-## Project info
+A modern social fitness mobile app that combines workout tracking with social sharing — think BeReal meets Strava for the gym.
 
-**URL**: https://lovable.dev/projects/0497e625-e98a-4dac-8b72-d87d5ae50d1a
+![Astra](https://img.shields.io/badge/Astra-Social%20Fitness-00D4AA?style=for-the-badge)
 
-## How can I edit this code?
+## Overview
 
-There are several ways of editing your application.
+Astra is a social fitness platform designed to help users track their workouts, share their fitness journey, and connect with like-minded athletes. The app features a unique blend of workout logging, social interaction, and progress tracking.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0497e625-e98a-4dac-8b72-d87d5ae50d1a) and start prompting.
+### 📱 Feed
+- View workout posts from friends and suggested lifters
+- Fist bump (like) and comment on posts
+- See workout details including type, duration, and location
+- Interactive workout highlights overlay on photos
+- Location map popup for geotagged workouts
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🔍 Search
+- Search for users by name or handle
+- Browse workout templates (Beginner, Intermediate, Advanced)
+- Filter by workout type: Upper Body, Lower Body, Core
+- Discover new lifters based on mutual connections
 
-**Use your preferred IDE**
+### 💪 Workout Tracking
+- Real-time workout timer with start, pause, and reset
+- Log exercises with sets, reps, and weight
+- Toggle between kg and lbs units
+- Search from predefined exercise library
+- Capture workout photos with front-facing camera
+- Add captions and share to feed
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 📊 Logbook
+- Weekly workout dashboard and stats
+- Complete workout history with detailed views
+- Save and edit workout templates
+- Track community workouts from friends
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 👤 Account
+- Customizable profile (name, handle, bio)
+- Workout calendar with activity tracking
+- Progress dashboard showing rep/weight improvements
+- Referral system for inviting friends
+- Settings for:
+  - Light/Dark mode
+  - Weight unit preferences (kg/lbs)
+  - Feedback submission
+  - Account management
 
-Follow these steps:
+## Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui + Radix UI
+- **State Management**: TanStack React Query
+- **Routing**: React Router DOM
+- **Icons**: Lucide React
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
+- Node.js 18+ 
+- npm or bun
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd astra
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/
+│   ├── account/          # Profile & settings components
+│   ├── feed/             # Feed post & suggested user components
+│   ├── ui/               # Reusable UI components (shadcn)
+│   └── workout/          # Workout template cards
+├── data/
+│   └── workoutTemplates.ts  # Predefined workout templates
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility functions
+├── pages/                # Main app pages
+│   ├── Feed.tsx
+│   ├── Search.tsx
+│   ├── Workout.tsx
+│   ├── Logbook.tsx
+│   └── Account.tsx
+└── index.css             # Global styles & design tokens
+```
 
-This project is built with:
+## Design System
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Astra uses a custom design system with:
+- **Primary Color**: Teal/Cyan (#00D4AA)
+- **Secondary Color**: Coral (#FF6B6B)
+- **Typography**: Outfit font family
+- **Dark/Light mode support**
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/0497e625-e98a-4dac-8b72-d87d5ae50d1a) and click on Share -> Publish.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
+This project is licensed under the MIT License.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ using [Lovable](https://lovable.dev)
