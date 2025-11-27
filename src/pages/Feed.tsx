@@ -16,6 +16,11 @@ const Feed = () => {
       likes: 47,
       comments: 8,
       isLiked: true,
+      exercises: [
+        { name: "Squat", sets: 4, reps: 8, weight: 185 },
+        { name: "Leg Press", sets: 3, reps: 12, weight: 270 },
+        { name: "Leg Curls", sets: 3, reps: 12, weight: 90 },
+      ],
     },
     {
       username: "Sarah Martinez",
@@ -29,6 +34,11 @@ const Feed = () => {
       imageUrl: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80",
       likes: 63,
       comments: 12,
+      exercises: [
+        { name: "Bench Press", sets: 4, reps: 6, weight: 135 },
+        { name: "Rows", sets: 4, reps: 8, weight: 95 },
+        { name: "Shoulder Press", sets: 3, reps: 10, weight: 65 },
+      ],
     },
   ];
 
@@ -56,9 +66,12 @@ const Feed = () => {
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border shadow-soft">
-          <div className="p-4">
+          <div className="p-4 flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center text-white font-bold text-lg">
+              A
+            </div>
             <h1 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              FitConnect
+              Astra
             </h1>
           </div>
         </div>
