@@ -128,8 +128,4 @@ Astra uses a custom design system with:
 
 ## License
 
-This project is licensed under the MIT License.
-
----
-
-Built with ❤️ using [Lovable](https://lovable.dev)
+This project is owned by Shyaaam Balasegaram. 
